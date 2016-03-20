@@ -35,42 +35,21 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
 
-	<div id="give-form-<?php the_ID(); ?>-content" <?php post_class(); ?>>
+	<?php beyond2016_excerpt(); ?>
 
-		<?php
-		/**
-		 * give_before_single_product_summary hook
-		 *
-		 * @hooked give_show_product_images - 10
-		 */
-		//do_action( 'give_before_single_form_summary' );
-		?>
+	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
-		<div class="<?php echo apply_filters( 'give_forms_single_summary_classes', 'summary entry-summary' ); ?>">
-			<h2><?php give_template_single_title(); ?></h2>
-			<?php give_get_donation_form(); ?>
+	<div id="give-form-<?php the_ID(); ?>-content">
+
 			<?php
-			/**
-			 * give_single_form_summary hook
-			 *
-			 * @hooked give_template_single_title - 5
-			 * @hooked give_get_donation_form - 10
-			 */
-			//do_action( 'give_single_form_summary' );
+				do_action( 'give_single_form_summary' );
 			?>
 
-		</div>
-		<!-- .summary -->
-
-		<?php
-		/**
-		 * give_after_single_form_summary hook
-		 */
-		do_action( 'give_after_single_form_summary' );
-		?>
-
-
 	</div><!-- #give-form-<?php the_ID(); ?> -->
-
+</article>
 <?php do_action( 'give_after_single_form' ); ?>
