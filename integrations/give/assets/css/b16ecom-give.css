@@ -1,1 +1,8 @@
-body {background: red;}
+div[id*="give-form-content"] {
+    float: right;
+    width: 71.42857144%;
+}
+
+body.single-give_forms div.entry-summary {
+    margin-bottom: 1.826086957em !important;
+}

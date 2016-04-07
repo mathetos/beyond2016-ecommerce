@@ -36,7 +36,7 @@ if ( !function_exists( 'add_action' ) ) {
 
 // Globals
 define( 'B16ECOM_SLUG', 'b16ecom' );
-define( 'WB16ECOM_PATH', plugin_dir_path( __FILE__ ) );
+define( 'B16ECOM_PATH', plugin_dir_path( __FILE__ ) );
 define( 'B16ECOM_URL', plugin_dir_url( __FILE__ ) );
 define( 'B16ECOM_VERSION', '1.0' );
 
@@ -52,7 +52,7 @@ class B16ECOM_Loader {
   }
 
   public function give_templates() {
-      require_once( WB16ECOM_PATH . '/integrations/give/give-bootstrapper.php');
+      require_once( B16ECOM_PATH . '/integrations/give/give-bootstrapper.php');
 
   }
 

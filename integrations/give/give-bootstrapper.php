@@ -10,7 +10,7 @@ add_filter('give_templates_dir', 'b16ecom_templates_dir', 99);
 add_filter('give_template_paths', 'b16ecom_template_location', 99);
 
 function b16ecom_templates_dir() {
-  return WB16ECOM_PATH . '/integrations/give/templates/';
+  return B16ECOM_URL . '/integrations/give/templates/';
 }
 
 function b16ecom_template_location() {
@@ -18,7 +18,7 @@ function b16ecom_template_location() {
   $template_dir = give_get_theme_template_dir_name();
 
   $file_paths = array(
-    1   => WB16ECOM_PATH . '/integrations/give/templates/',
+    1   => B16ECOM_PATH . '/integrations/give/templates/',
     10     => trailingslashit( get_stylesheet_directory() ) . $template_dir,
     100    => trailingslashit( get_template_directory() ) . $template_dir,
     200   => give_get_templates_dir()
@@ -53,9 +53,6 @@ function b16ecom_give_sidebar() {
 add_action('wp_enqueue_scripts', 'b16ecom_give_styles');
 
 function b16ecom_give_styles() {
-  wp_register_style('b16ecome-give-css', B16ECOM_URL . 'integrations/give/assets/css/b16ecom-give.css', 'give-styles');
 
-  //if (is_singular('give_forms')) {
-        wp_enqueue_style('b16ecom-give-css');
-  //}
+  wp_enqueue_style('b16ecom-give-css', B16ECOM_URL . 'integrations/give/assets/css/b16ecom-give.css', 'beyond2016-main');
 }
