@@ -6,3 +6,33 @@ div[id*="give-form-content"] {
 body.single-give_forms div.entry-summary {
     margin-bottom: 1.826086957em !important;
 }
+
+body.single-give_forms.no-sidebar div[id*="give-form-content"] {
+	width: 70%;
+}
+body.single-give_forms.no-sidebar article.type-give_forms footer.entry-footer {
+	margin-right: -100%;
+	margin-left: 0;
+	width: 25%;
+}
+
+body.single-give_forms.give-sidebar-left .sidebar {
+	margin-left: 0;
+}
+
+body.single-give_forms.give-sidebar-left .content-area {
+	width: 100%;
+}
+body.single-give_forms.give-sidebar-left .site-main {
+	margin-left: 30%;
+}
+
+body.single-give_forms.no-give-sidebar div[id*="give-form-content"] {
+	float: none;
+	width: 100%;
+}
+
+body.single-give_forms article.give_forms .images {
+	margin: 0 0 40px 0;
+
+}

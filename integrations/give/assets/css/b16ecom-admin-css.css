@@ -1,0 +1,13 @@
+#beyond2016_give_layout_options .instructions {
+	background: #eee;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    color: #777;
+    font-style: italic;
+    top: -6px;
+}
+
+#beyond2016_give_layout_options .inside {
+	padding-top: 150px;
+}

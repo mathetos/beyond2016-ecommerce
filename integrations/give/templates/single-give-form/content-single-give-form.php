@@ -12,13 +12,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$hidetitle = get_post_meta( $post->ID, 'disable-title' );
+//Form Layout Options
 
-if ($hidetitle == 'yes') {
-	$hide = 'style="display:none;"';
-} else {
-	$hide = '';
-}
+$sidebar = get_post_meta( $post->ID, 'beyond2016-main-sidebar-layout', true );
+$hidetitle = get_post_meta( $post->ID, 'disable-give-title', true );
+$sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout', true );
+$givesidebar = get_post_meta( $post->ID, 'hide-give-sidebar', true );
+$hidebottomsidebar = get_post_meta( $post->ID, 'hide-give-bottom-sidebar', true );
+$hidefooter = get_post_meta( $post->ID, 'hide-footer', true );
+
+do_action('b16ecom_give_nosidebar');
+
+if ( $sidebar != 'disable') {
+    add_filter('give_after_main_content', 'b16ecom_give_sidebar');
+  } 
+
+
+$hide = ($hidetitle == 'yes' ? 'style="display:none;"' : '');
+
 ?>
 
 <?php
@@ -36,13 +47,13 @@ if ( post_password_required() ) {
 }
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header" <?php echo $hide; ?>>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
+	<?php give_get_template_part( 'single-give-form/featured-image' ); ?>
+	
 	<?php beyond2016_excerpt(); ?>
-
-	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
 	<div id="give-form-content-<?php the_ID(); ?>">
 
@@ -51,9 +62,22 @@ if ( post_password_required() ) {
 			?>
 
 	</div><!-- #give-form-<?php the_ID(); ?> -->
-	<footer class="entry-footer">
-		<?php give_get_template_part( 'single-give-form/sidebar' ); ?>
-	</footer>
+	
+	<?php if ($givesidebar != 'yes') : ?>
+		<footer class="entry-footer">
+			<?php give_get_template_part( 'single-give-form/sidebar' ); ?>
+		</footer>
+	<?php endif; ?>
+
 </article>
+
 <?php do_action( 'give_after_single_form' ); ?>
+
+<?php
+	if ($hidebottomsidebar == 'yes') {
+	//display nothing here
+	} else {
+	get_sidebar( 'content-bottom' );
+	} 
+?>
 
