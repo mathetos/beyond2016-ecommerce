@@ -6,14 +6,14 @@
  *  This loads up all the relevant files for integrating with the Give Donations plugin
  *
  */
-add_filter('give_templates_dir', 'b16ecom_templates_dir', 99);
-add_filter('give_template_paths', 'b16ecom_template_location', 99);
+//add_filter('give_templates_dir', 'b16ecom_templates_dir', 99);
+add_filter('give_template_paths', 'b16ecom_give_template_paths', 99);
 
-function b16ecom_templates_dir() {
-  return B16ECOM_URL . '/integrations/give/templates/';
+function b16ecom_give_templates_dir() {
+  return B16ECOM_PATH . '/integrations/give/templates/';
 }
 
-function b16ecom_template_location() {
+function b16ecom_give_template_paths() {
 
   $template_dir = give_get_theme_template_dir_name();
 

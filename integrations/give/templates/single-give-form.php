@@ -22,8 +22,8 @@ get_header();
 do_action( 'give_before_main_content' );
 
 while ( have_posts() ) : the_post();
-
-	give_get_template_part( 'single-give-form/content', 'single-give-form' );
+	echo '<h1>TEST!</h1>';
+	b16ecom_give_templates_dir( 'single-give-form/content', 'single-give-form' );
 
 endwhile; // end of the loop.
 
