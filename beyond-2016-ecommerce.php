@@ -47,8 +47,8 @@ class B16ECOM_Loader {
     $this->version = B16ECOM_VERSION;
 
     add_action( 'plugins_loaded', array( $this, 'give_templates' ), 1, 1);
-    add_action( 'plugins_loaded', array( $this, 'edd_templates' ), 1);
-    add_action( 'plugins_loaded', array( $this, 'woo_templates' ), 1);
+    //add_action( 'plugins_loaded', array( $this, 'edd_templates' ), 1);
+    //add_action( 'plugins_loaded', array( $this, 'woo_templates' ), 1);
   }
 
   public function give_templates() {
