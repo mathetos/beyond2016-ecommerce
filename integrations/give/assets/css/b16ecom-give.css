@@ -36,3 +36,36 @@ body.single-give_forms article.give_forms .images {
 	margin: 0 0 40px 0;
 
 }
+
+body.post-type-archive-give_forms #product-archive-wrap article .entry-title {
+    font-size: 120%;
+    text-align: center;
+    margin: 0 0 10px 0;
+    line-height: 1;
+    padding: 0;
+}
+
+body.post-type-archive-give_forms #product-archive-wrap article a.post-thumbnail {
+	margin: 0 0 1em 0;
+}
+
+body.post-type-archive-give_forms #product-archive-wrap div.excerpt {
+	max-width: 84%;
+    margin: 0 7% 15px;
+}
+
+body.post-type-archive-give_forms #product-archive-wrap footer.entry-footer {
+	margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    background: rgba(0,0,0,0.2);
+}
+
+body.post-type-archive-give_forms #product-archive-wrap footer.entry-footer p {
+	margin: 0;
+}
+
+body.post-type-archive-give_forms article.type-give_forms a.post-thumbnail {
+
+}
