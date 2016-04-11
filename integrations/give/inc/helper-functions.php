@@ -130,7 +130,7 @@ function b16ecom_give_bodyclasses( $classes ) {
   $sidebar = get_post_meta( $post->ID, 'beyond2016-main-sidebar-layout', true );
   $givesidebar = get_post_meta( $post->ID, 'hide-give-sidebar', true );
 
-  if ( $sidebar == 'disable' ) {
+  if ( $sidebar == 'disable' || is_post_type_archive('give_forms')) {
     $classes[] = 'no-sidebar';
   } elseif ($sidebar == 'right') {
     $classes[] = 'give-sidebar-right';
