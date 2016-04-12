@@ -12,14 +12,14 @@ function b16ecom_enqueue_admin_css($hook) {
 
   if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
     if ( 'give_forms' === $post->post_type ) {  
-      wp_enqueue_style( 'b16ecom-admin-css', B16ECOM_URL . 'integrations/give/assets/css/b16ecom-admin-css.css' );
+      wp_enqueue_style( 'b16ecom-admin-css', B16ECOM_URL . 'integrations/give/assets/css/b16ecom-admin-css.css', false, mt_rand(), false );
     }
   }
 }
 
 function b16ecom_give_scripts() {
 
-  wp_enqueue_style('b16ecom-give-css', B16ECOM_URL . 'integrations/give/assets/css/b16ecom-give.css', 'beyond2016-main');
+  wp_enqueue_style('b16ecom-give-css', B16ECOM_URL . 'integrations/give/assets/css/b16ecom-give.css', 'beyond2016-main', mt_rand(), false);
 
 }
 

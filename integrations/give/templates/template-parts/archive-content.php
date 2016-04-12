@@ -7,6 +7,8 @@
  * @since Twenty Sixteen 1.0
  */
 	
+	$give_options = give_get_settings();
+	
 	if( $give_options['enable_categories'] == 'on' ) {
 		$givecat = get_the_terms($post->id, 'give_forms_category');
 		$catlink = get_term_link($givecat[0]->term_id);
@@ -16,14 +18,14 @@
 	}
 
 	if( $give_options['enable_tags'] == 'on' ) {
-		$givetag = get_the_terms($post->id, 'give_forms_tag');
-		$taglink = get_term_link($givetag[0]->term_id);
+		if (has_term('','give_forms_tag')) {
+			$givetag = get_the_terms($post->id, 'give_forms_tag');
+			$taglink = get_term_link($givetag[0]->term_id);
+		}
 	} else {
 		$givetag = '';
 		$taglink = '';
 	}
-
-	$give_options = give_get_settings();
 
 ?>
 
